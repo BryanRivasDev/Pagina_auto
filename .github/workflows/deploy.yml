@@ -1,0 +1,29 @@
+name: 🚀 Deploy website on push
+
+on:
+  push:
+    branches:
+      - main # Cambia 'main' si tu rama principal se llama 'master'
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy to InfinityFree
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Get latest code
+        uses: actions/checkout@v4
+
+      - name: 📂 Sync files
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.6
+        with:
+          # Reemplaza 'ftpupload.net' con el host FTP de tu panel de InfinityFree
+          server: autolote.fwh.is
+          # Reemplaza 'epiz_...' con tu usuario FTP real
+          username: ${{ secrets.FTP_USERNAME }}
+          # Usa el secreto que creaste anteriormente para la contraseña
+          password: ${{ secrets.FTP_PASSWORD }}
+          # Reemplaza './' con la carpeta que contiene tu código fuente (ej. './public')
+          local-dir: ./
+          # La carpeta raíz de tu sitio en InfinityFree (normalmente es htdocs/)
+          server-dir: htdocs/
