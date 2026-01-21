@@ -1,0 +1,2122 @@
+/* Modern Minimalist Design System */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --primary: #ffffff; /* Modern White Accent */
+    --primary-dark: #cccccc;
+    --secondary: #1f2937;
+    --text-main: #f3f4f6;
+    --text-light: #9ca3af;
+    --bg-color: #111827; /* Dark Gray (Slate 900) */
+    --surface: #1f2937; /* Lighter Dark Gray (Slate 800) */
+    --border: #374151;
+}
+
+/* Light Mode Variables */
+body.light-mode {
+    --bg-color: #f3f4f6;
+    --surface: #ffffff;
+    --text-main: #1f2937;
+    --text-light: #6b7280;
+    --secondary: #e5e7eb;
+    --border: #e5e7eb;
+    --primary: #3b82f6; /* Use Corporate Blue in Light Mode */
+    --primary-dark: #2563eb;
+}
+
+/* Light Mode Specific Overrides */
+body.light-mode .brand-title {
+    color: var(--primary);
+}
+
+body.light-mode .navbar {
+    background-color: rgba(255, 255, 255, 0.85);
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+}
+
+body.light-mode .dropdown-content {
+    background: #ffffff;
+    border-color: #e5e7eb;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+
+body.light-mode .dropdown-toggle:hover, 
+body.light-mode .nav-links a:hover {
+    background-color: #eff6ff;
+    color: var(--primary);
+}
+
+body.light-mode .search-form {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+}
+
+body.light-mode .form-control {
+    background: #f9fafb;
+    border: 1px solid #d1d5db;
+    color: #1f2937;
+}
+
+body.light-mode .form-control:focus {
+    background: #ffffff;
+    border-color: var(--primary);
+}
+
+body.light-mode .car-card {
+    background: #ffffff;
+    border-color: #e5e7eb;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .slide-content {
+    text-shadow: 0 2px 4px rgba(0,0,0,0.8); /* Enhance contrast on potentially light slides, though slides are images */
+}
+
+/* In light mode, ensure text inside dark sections (like footer) stays light if needed, 
+   but footer is styled with direct colors usually. */
+body.light-mode .site-footer {
+    background-color: #111827; /* Keep footer dark */
+    color: #f3f4f6;
+}
+
+body.light-mode .section-header h2 {
+    color: var(--text-main) !important;
+}
+
+body.light-mode .section-header p {
+     color: var(--text-light) !important;
+}
+
+body.light-mode .btn-view-all {
+    color: var(--primary) !important;
+    border-color: var(--primary) !important;
+}
+
+body.light-mode .explore-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    color: var(--text-main);
+}
+body.light-mode .explore-card:hover {
+    border-color: var(--primary);
+}
+
+body.light-mode .contact-hero h1,
+body.light-mode .inventory-header h1 {
+    color: #1f2937 !important; /* Force dark title in light mode */
+    background: none;
+    -webkit-text-fill-color: initial;
+}
+
+body.light-mode .contact-hero {
+    background: linear-gradient(rgba(243, 244, 246, 0.9), rgba(255, 255, 255, 0.95)), url('../images/hero-bg.jpg'); /* Light overlay */
+    background-size: cover;
+    background-position: center;
+    border-color: #e5e7eb;
+}
+
+body.light-mode .sidebar-filters {
+    background: #ffffff;
+    border-color: #e5e7eb;
+}
+
+body.light-mode .sidebar-filters h2,
+body.light-mode .filter-title {
+    color: #1f2937;
+}
+
+body.light-mode .search-input, 
+body.light-mode select.search-input,
+body.light-mode .range-inputs input {
+    background: #f9fafb;
+    border-color: #d1d5db;
+    color: #1f2937;
+}
+
+/* Modern Filter Button Override */
+.sidebar-filters .btn-primary {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    border-radius: 0.75rem;
+    box-shadow: 0 4px 6px -1px rgba(37, 99, 235, 0.2);
+    width: 100%;
+    margin-top: 1rem;
+    padding: 0.875rem;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.sidebar-filters .btn-primary:hover {
+    background: linear-gradient(135deg, #1d4ed8, #1e40af);
+    transform: translateY(-1px);
+    box-shadow: 0 6px 10px -1px rgba(37, 99, 235, 0.3);
+}
+
+body.light-mode .checkbox-item {
+    color: #4b5563;
+}
+body.light-mode .checkbox-item:hover {
+    color: #1f2937;
+}
+
+body.light-mode .about-card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    color: #1f2937;
+    color: #1f2937;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .info-card {
+    background: #ffffff;
+    border-color: #e5e7eb;
+    color: #1f2937;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+body.light-mode .results-header {
+    background: #ffffff;
+    border-color: #e5e7eb;
+    color: #4b5563;
+}
+
+/* Fix Brand Link format to avoid Purple visited state */
+.brand-link {
+    text-decoration: none;
+    color: var(--primary) !important;
+}
+
+body.light-mode .brand-link h1 {
+    color: var(--primary);
+}
+
+/* Default dark mode brand link should be white or primary */
+.brand-link h1 {
+    color: white; /* In dark mode, brand is white */
+}
+body.light-mode .brand-link h1 {
+    color: var(--primary); /* In light mode, brand is blue */
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    margin: 0;
+}
+
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+}
+
+/* Minimalist Floating Navbar */
+/* Dynamic Island Navbar */
+/* Dynamic Glass Navbar */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.6); /* Transparent Dark */
+    backdrop-filter: blur(20px); /* Premium Blur */
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Subtle border */
+    position: sticky;
+    top: 1.5rem;
+    z-index: 1000;
+    padding: 0.75rem 2rem;
+    width: auto;
+    min-width: 60%;
+    max-width: 1000px;
+    margin: 1.5rem auto 1.5rem auto;
+    border-radius: 9999px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Nav Link Styling for Dynamic Island */
+.nav-links a {
+    position: relative;
+    padding: 0.5rem 1.25rem;
+    color: #9ca3af; /* Gray text by default */
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: #000000; /* Text turns black */
+    background-color: #ffffff; /* Background turns white (Pill effect) */
+    transform: scale(1.05); /* Subtle pop */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: var(--primary); /* Use var for adaptability */
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem; /* Reduced spacing */
+}
+
+.nav-links a {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    margin: 0; /* Force zero margin */
+    transition: color 0.3s;
+    font-size: 0.95rem;
+}
+
+/* Ensure the dropdown toggle (which is a DIV, not A) behaves like a link */
+.dropdown-toggle {
+    /* Same styling as links for consistency */
+    padding: 0.5rem 1.25rem;
+    color: #9ca3af;
+    border-radius: 9999px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin: 0; /* Force zero margin */
+    border: none;
+    background: transparent;
+    font-family: inherit;
+    font-size: 0.95rem; /* Match links */
+}
+
+.dropdown-toggle:hover {
+    color: #000000;
+    background-color: #ffffff;
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.nav-links a:hover {
+    color: #666;
+}
+
+.search-section {
+    background-color: transparent;
+    padding-bottom: 2rem;
+    margin-top: -4rem; /* Overlap with hero */
+    position: relative;
+    z-index: 10;
+}
+
+.search-form {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: 0; /* Sharper edges */
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    align-items: end;
+    border: 1px solid var(--border);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 600;
+    font-size: 0.85rem;
+    color: var(--text-main);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid var(--border);
+    border-radius: 0;
+    font-size: 1rem;
+    background-color: #111827;
+    color: white;
+    box-sizing: border-box; 
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+/* Minimalist Grid */
+.cars-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Forced 3 columns as requested */
+    gap: 2rem;
+    padding: 4rem 0;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 1024px) {
+    .cars-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+@media (max-width: 768px) {
+    .cars-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Card Minimalist */
+.car-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 0; /* Sharper */
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    width: 100%; /* Fluid width to fit grid */
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.car-image {
+    width: 100%; /* Fluid width */
+    height: 300px; /* Fixed height as requested */
+    object-fit: cover;
+    display: block;
+}
+
+.car-details {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.car-details h3 {
+    font-size: 1.1rem;
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+}
+
+.car-price {
+    color: var(--primary);
+    font-weight: 800;
+    font-size: 1.25rem;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.car-meta {
+    display: flex;
+    justify-content: space-between;
+    color: var(--text-light);
+    font-size: 0.9rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+}
+
+.btn-search, .btn-primary, .btn-whatsapp-large {
+    background-color: var(--primary);
+    color: black; /* Black text on white button */
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+    text-decoration: none;
+    border-radius: 0; /* Modern Sharp */
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    display: inline-block;
+}
+
+.btn-whatsapp {
+    background-color: #25d366;
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    cursor: pointer;
+    font-weight: 600;
+    transition: background 0.2s;
+    text-decoration: none;
+    border-radius: 0;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    display: inline-block;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.btn-whatsapp:hover {
+    background-color: #128c7e;
+    color: white;
+}
+
+.btn-search:hover, .btn-primary:hover {
+    background-color: var(--primary-dark);
+}
+
+.btn-block {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+    margin-top: auto;
+}
+
+/* Carousel Styles */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    max-width: 1400px; /* Contained width */
+    margin: 0 auto;    /* Centered */
+    height: 400px;     /* Smaller fixed height */
+    overflow: hidden;
+    background: #000;
+}
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    background-size: cover;
+    background-position: center;
+}
+.slide.active {
+    opacity: 1;
+}
+.slide-content {
+    position: absolute;
+    bottom: 20%;
+    left: 5%; /* Adjusted padding */
+    color: white;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    max-width: 600px;
+}
+.slide-title {
+    font-size: 3rem; /* Restored size for impact */
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+    line-height: 1.1;
+    text-transform: uppercase;
+    letter-spacing: -2px;
+}
+.slide-subtitle {
+    font-size: 1.25rem;
+    font-weight: 300;
+    opacity: 0.9;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    z-index: 10;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.8);
+}
+
+/* Footer & Other */
+.site-footer {
+    background-color: #000;
+    color: white;
+    padding: 4rem 0 2rem;
+    margin-top: 4rem;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.footer-col {
+    text-align: center;
+}
+
+.footer-section h3 {
+    border-bottom: 2px solid #555;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block; /* Make underline match text width if desired, or keep block */
+    width: 100%; /* Keep border full width or adjust? keeping as is usually better for grid */
+}
+
+/* Override border for centered look if needed, or keep it. User asked to center "parts". */
+.footer-section h3 {
+    border-bottom: 1px solid rgba(255,255,255,0.1); /* softer border */
+    text-align: center;
+}
+
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center; /* Center icons */
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    background: #4b5563;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.footer-bottom {
+    text-align: center;
+    margin-top: 3rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 2rem;
+    color: #94a3b8;
+    font-size: 0.9rem;
+}
+
+.social-links a:hover {
+    background: white;
+    color: black;
+}
+
+.whatsapp-float {
+    position: fixed;
+    width: 60px;
+    height: 60px;
+    bottom: 40px;
+    right: 40px;
+    background-color: #25d366;
+    color: #FFF;
+    border-radius: 50%;
+    font-size: 30px;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    text-decoration: none;
+    transition: transform 0.3s;
+}
+
+.whatsapp-float:hover {
+    transform: scale(1.1);
+}
+
+/* Car Badges */
+.car-card {
+    position: relative;
+}
+
+.car-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    color: white;
+    font-weight: bold;
+    font-size: 0.85rem;
+    z-index: 10;
+    text-transform: uppercase;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+}
+
+.badge-new {
+    background-color: #10b981; /* Green */
+}
+
+.badge-promo {
+    background-color: #ef4444; /* Red */
+}
+
+/* Navbar Dropdown */
+.dropdown {
+    position: relative;
+    /* Display block or flex item default is fine inside flex container */
+    /* margin-left removed */
+    display: flex;
+    align-items: center;
+}
+
+.dropdown-toggle {
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 0.95rem;
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.dropdown-toggle:hover {
+    color: #666;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--surface);
+    min-width: 200px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    z-index: 2000;
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 0.5rem 0;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 100%; /* Position right below the toggle */
+    margin-top: 0.5rem; /* Add visual spacing */
+}
+
+/* Invisible bridge to prevent menu from closing when moving mouse */
+.dropdown-content::before {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.2s ease-in-out;
+}
+
+.dropdown-content a {
+    color: var(--text-main) !important; /* Ensure base color is visible */
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    display: block;
+    font-size: 0.9rem;
+    margin-left: 0; /* Reset nav margin */
+    transition: background-color 0.2s;
+    text-align: left;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--primary);
+    color: black !important; /* Override the forced white from nav-links */
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateX(-50%) translateY(10px); }
+    to { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+
+/* Contact Page Redesign */
+/* Contact Page Redesign */
+.contact-hero {
+    background: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.9)), url('../images/hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    padding: 10rem 1rem 6rem; /* Increased top padding to account for navbar overlap */
+    text-align: center;
+    margin-bottom: 4rem;
+    border-bottom: 1px solid var(--border);
+    margin-top: -8rem; /* Pull hero up behind the navbar */
+}
+
+.contact-hero h1 {
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    background: linear-gradient(to right, #ffffff, #9ca3af);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr; /* Widen the right column (info cards) */
+    gap: 3rem; /* Reduce gap slightly */
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+    padding: 0 1.5rem;
+    align-items: stretch; /* Ensure both columns are same height */
+}
+
+.contact-form-card {
+    background: var(--surface);
+    padding: 2.5rem 2.5rem 1.5rem 2.5rem; /* Reduced bottom padding */
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+/* Related Cars Carousel Styles */
+.related-car-card {
+    min-width: 300px;
+    max-width: 300px;
+    cursor: pointer;
+    flex-shrink: 0;
+    position: relative;
+    background: var(--surface);
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--border);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.related-car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+body.light-mode .related-car-card {
+    background: #ffffff;
+    border-color: #e5e7eb;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.related-car-title {
+    color: #f8fafc;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+body.light-mode .related-car-title {
+    color: #1f2937;
+}
+
+.related-car-price {
+    color: #3b82f6;
+    font-weight: 800;
+    font-size: 1.5rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.related-car-meta {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #9ca3af;
+    border-top: 1px solid #334155;
+    padding-top: 0.75rem;
+}
+
+body.light-mode .related-car-meta {
+    color: #6b7280;
+    border-top-color: #e5e7eb;
+}
+
+.contact-form-card h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.8rem;
+    color: var(--primary);
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-light);
+    font-weight: 500;
+}
+
+.form-control {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    background: var(--bg-color);
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    color: var(--text-main);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1);
+}
+
+textarea.form-control {
+    resize: vertical;
+    min-height: 120px;
+}
+
+.btn-submit {
+    background: var(--primary);
+    color: var(--bg-color); /* Corrected text color */
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s;
+    width: auto; /* Allow content fit */
+    min-width: 180px;
+    display: table;
+    margin: 0 auto; /* Center it */
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    letter-spacing: 0.5px;
+}
+
+.btn-submit:hover {
+    background: #e5e7eb;
+    transform: translateY(-2px);
+}
+
+.contact-info-section {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: 1fr 1fr; /* Force 2 equal height rows */
+    gap: 1.5rem;
+    height: 100%; /* Fill the wrapper height */
+}
+
+.info-card {
+    background: rgba(31, 41, 55, 0.5);
+    padding: 2rem 1rem;
+    border-radius: 1rem;
+    border: 1px solid var(--border);
+    margin-bottom: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    transition: transform 0.3s;
+    height: 100%; /* Fill the grid cell perfectly */
+    width: 100%;
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    background: var(--surface);
+}
+
+.info-icon {
+    background: var(--primary);
+    color: var(--bg-color);
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-right: 0;
+    margin-bottom: 1rem;
+    flex-shrink: 0;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.info-content h4 {
+    color: var(--text-main);
+    font-size: 1.1rem; /* Slightly smaller to fit */
+    margin-bottom: 0.5rem;
+}
+
+.info-content p {
+    color: var(--text-light);
+    line-height: 1.5;
+    font-size: 0.95rem;
+}
+
+.contact-map-section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto 4rem auto;
+    height: 500px;
+    border: 1px solid var(--border);
+    border-radius: 1rem;
+    position: relative;
+    overflow: hidden;
+    padding: 0;
+}
+
+.contact-map-section iframe {
+    width: 100% !important;
+    height: 100% !important;
+    border: 0;
+    filter: invert(90%) hue-rotate(180deg);
+    display: block;
+}
+
+@media (max-width: 900px) {
+    .contact-wrapper {
+        grid-template-columns: 1fr;
+    }
+    .contact-info-section {
+        grid-template-columns: 1fr; /* Stack cards on mobile */
+    }
+}  
+/* Modern Homepage Additions */
+
+/* Search Container */
+.search-container-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.modern-search-bar {
+    background: #ffffff;
+    border-radius: 9999px; /* Pill Shape */
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 0.5rem 0.5rem 1.5rem; /* Extra left padding */
+    box-shadow: 0 10px 40px rgba(0,0,0,0.15); /* Softer, larger shadow */
+    gap: 0.5rem;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.search-input-group {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+}
+
+.search-input-group input {
+    width: 100%;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+    color: #333;
+    padding: 0.5rem;
+}
+
+.search-icon {
+    color: #333;
+    font-size: 1.1rem;
+    margin-right: 0.5rem;
+}
+
+
+/* Lightbox Styles */
+.lightbox {
+    position: fixed;
+    z-index: 9999;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s;
+}
+
+.lightbox.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 4px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+}
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    padding: 1rem;
+    user-select: none;
+    z-index: 10000;
+    background: rgba(0,0,0,0.2);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
+}
+
+.lightbox-nav:hover {
+    background: rgba(255,255,255,0.1);
+}
+
+.lightbox-prev {
+    left: 20px;
+}
+
+.lightbox-next {
+    right: 20px;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 3rem;
+    cursor: pointer;
+    z-index: 10001;
+    line-height: 1;
+}
+
+@media (max-width: 768px) {
+    .lightbox-nav {
+        font-size: 2rem;
+        width: 40px;
+        height: 40px;
+        padding: 0.5rem;
+    }
+    .lightbox-prev { left: 10px; }
+    .lightbox-next { right: 10px; }
+}
+
+.search-dropdown-group {
+    flex: 1;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-dropdown-group select {
+    width: 100%;
+    appearance: none;
+    border: none;
+    outline: none;
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #4b5563;
+    padding: 0.5rem 2rem 0.5rem 1rem;
+    background: transparent;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.dropdown-icon {
+    position: absolute;
+    right: 1rem;
+    color: #9ca3af;
+    pointer-events: none;
+    font-size: 0.8rem;
+}
+
+.btn-search-main {
+    background: #111827; /* Dark Button */
+    color: white;
+    border: none;
+    border-radius: 50%; /* Circle Button */
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+    font-size: 1.2rem; /* Icon size */
+    padding: 0;
+}
+
+/* Hide text */
+.btn-search-main span, 
+.btn-search-main text {
+    display: none;
+}
+
+.btn-search-main i {
+    margin: 0;
+}
+
+.btn-search-main:hover {
+    background: #000;
+    transform: scale(1.05);
+}
+
+/* Explore Sections */
+.section-title-explore {
+    color: var(--primary);
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    padding-left: 0.5rem;
+    border-left: 4px solid var(--primary); /* Accent line */
+    line-height: 1;
+}
+
+.explore-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.explore-card {
+    background: white;
+    border: 1px solid #e5e7eb;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #64748b;
+    transition: all 0.3s;
+    height: 120px;
+    text-align: center;
+}
+
+.explore-card:hover {
+    border-color: var(--primary);
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.explore-card img {
+    height: 50px;
+    width: auto;
+    max-width: 100%;
+    margin-bottom: 0.5rem;
+    object-fit: contain;
+    transition: all 0.3s;
+}
+
+.explore-card:hover img {
+    transform: scale(1.1);
+}
+
+.explore-card span {
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+/* Brands Grid */
+.explore-grid-brands {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 1.5rem;
+}
+
+.explore-card-brand {
+    background: white;
+    border: 1px solid #e5e7eb;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    transition: all 0.3s;
+}
+
+.explore-card-brand:hover {
+    border-color: #001f5f;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.explore-card-brand img {
+    max-height: 50px;
+    max-width: 100%;
+    transition: all 0.3s;
+}
+
+.explore-card-brand:hover img {
+    transform: scale(1.1);
+}
+
+/* Responsive Search */
+@media (max-width: 768px) {
+    .modern-search-bar {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+    }
+    
+    .search-divider {
+        width: 100%;
+        height: 1px;
+        margin: 0.5rem 0;
+    }
+
+    .btn-search-main {
+        margin-top: 0.5rem;
+        justify-content: center;
+    }
+    
+    .search-input-group, .search-dropdown-group {
+        width: 100%;
+        flex: none;
+    }
+}
+  
+/* Carousel Container */
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    margin-top: 3rem;
+    padding: 0 0.5rem;
+}
+
+.section-header h2 {
+    font-size: 1.75rem;
+    color: #001f5f; /* Brand Blue */
+    font-weight: 800;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 1rem 0 2rem 0; /* Space for shadow/hover */
+}
+
+.carousel-track {
+    display: flex;
+    gap: 1.5rem;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    padding-bottom: 1rem;
+    scroll-snap-type: x mandatory; /* Snap scrolling */
+    /* Hide Scrollbar */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none;  /* IE and Edge */
+}
+
+@media (max-width: 576px) {
+    .carousel-track {
+        gap: 0; /* Remove gap to fix alignment on mobile */
+    }
+}
+
+.carousel-track::-webkit-scrollbar {
+    display: none;
+}
+
+/* Updated Car Card Design */
+.car-card {
+    /* Fluid width for 4 items: (100% - 3 gaps) / 4 */
+    /* Gap is 1.5rem */
+    flex: 0 0 calc(25% - 1.125rem);
+    min-width: 0; /* Allow flex shrink if needed contextually */
+    max-width: none;
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 1.5rem; /* Significantly rounded */
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 0.5rem;
+    scroll-snap-align: center; /* Align to center of snap container */
+}
+
+/* Responsive Scaling for Carousel */
+@media (max-width: 1200px) {
+    .car-card {
+        flex: 0 0 calc(33.333% - 1rem); /* 3 items */
+    }
+}
+
+@media (max-width: 992px) {
+    .car-card {
+        flex: 0 0 calc(50% - 0.75rem); /* 2 items */
+    }
+}
+
+@media (max-width: 576px) {
+    .car-card {
+        flex: 0 0 100%; /* 1 item */
+    }
+}
+
+.car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-color: #001f5f;
+}
+
+.car-image-container {
+    position: relative;
+    height: 180px;
+    width: 100%;
+    overflow: hidden;
+}
+
+.car-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.car-card:hover .car-image {
+    transform: scale(1.05); /* Subtle zoom */
+}
+
+.badge-top-right {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: #001f5f;
+    color: white;
+    font-size: 0.7rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 5;
+}
+
+.car-details {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Title: MAKE MODEL YEAR */
+.car-title {
+    color: #003366; /* Deep Blue */
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin: 0 0 0.5rem 0;
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+/* Subtitle: Year . Make . Km */
+.car-subtitle {
+    color: #64748b; /* Slate 500 */
+    font-size: 0.75rem; /* Reduced to fit line */
+    font-weight: 600; /* Slightly bolder for readability at small size */
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem; /* Tighter spacing */
+    white-space: nowrap; /* Force 1 line */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    letter-spacing: -0.3px; /* Optimize horizontal space */
+}
+
+.car-divider {
+    border-top: 1px dashed #e2e8f0;
+    margin-bottom: 1rem;
+}
+
+.car-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.price-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.price-label {
+    font-size: 0.75rem;
+    color: #374151 !important; /* Force Dark Gray */
+    font-weight: 700;
+    text-transform: uppercase;
+    display: block;
+}
+
+.price-value {
+    font-size: 1.2rem;
+    color: #374151 !important; /* Force Gray as requested */
+    font-weight: 800;
+    line-height: 1.2;
+}
+
+.btn-details {
+    background: #f3f4f6;
+    color: #374151;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+
+.btn-details:hover {
+    background: #e5e7eb;
+    color: #111;
+}
+
+/* Navigation Buttons for Carousel */
+.carousel-nav-btn {
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #e5e7eb;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    z-index: 10;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.2s;
+}
+
+.carousel-nav-btn:hover {
+    background: #001f5f;
+    color: white;
+    border-color: #001f5f;
+}
+
+.nav-prev { left: 0; }
+.nav-next { right: 0; }
+
+
+
+/* Lightbox Modal Styles */
+.lightbox {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(8px); /* Blur effect requested */
+    z-index: 9999; /* Ensure it's on top of everything */
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.lightbox.active {
+    display: flex;
+    opacity: 1;
+}
+
+.lightbox-content {
+    max-width: 90%;
+    max-height: 90vh;
+    border-radius: 0.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5);
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+    object-fit: contain; /* Ensure image isn't cropped */
+}
+
+.lightbox.active .lightbox-content {
+    transform: scale(1);
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 2.5rem;
+    cursor: pointer;
+    z-index: 2001;
+    transition: color 0.2s;
+}
+
+.lightbox-close:hover { color: #fe2c55; }
+
+.lightbox-nav {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background 0.2s;
+    font-size: 1.5rem;
+}
+
+.lightbox-nav:hover { background: rgba(255, 255, 255, 0.3); }
+.lightbox-prev { left: 20px; }
+
+/* Modern Search Bar Container */
+.modern-search-bar {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.1); /* Glass background */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 50px; /* Pill shape */
+    padding: 0.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    width: fit-content; /* SHRINK TO CONTENT - Removes outer gap */
+    max-width: 95%; /* Prevent overflow on mobile */
+    margin: 0 auto;
+    position: relative;
+    z-index: 50; /* Ensure on top */
+}
+
+.search-input-group {
+    display: flex;
+    align-items: center;
+    flex-grow: 0; /* DO NOT GROW - Removes inner gap */
+    width: auto;
+    padding: 0 0 0 1.5rem; /* Removed Right Padding */
+}
+
+.search-input-group input {
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    width: 280px; /* Fixed reasonable width for typing */
+    margin-left: 10px;
+}
+
+/* Soft White Placeholder */
+.search-input-group input::placeholder {
+    color: rgba(255, 255, 255, 0.6); /* Soft White */
+    font-weight: 300;
+}
+
+.search-input-group input:focus {
+    outline: none;
+}
+
+.search-input-group .search-icon {
+    color: #9ca3af;
+}
+
+/* Remove Divider completely */
+.search-divider {
+    display: none !important;
+    margin: 0 !important;
+    width: 0 !important;
+}
+
+.search-dropdown-group {
+    position: relative;
+    width: auto; /* Let it shrink to text size */
+    min-width: auto;
+    margin-right: 1rem; /* Precise gap between dropdowns */
+}
+
+.search-dropdown-group:last-of-type {
+    margin-right: 0; /* No margin for the last one before button */
+}
+
+.btn-search-main {
+    background: #ffffff;
+    color: #000;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin-left: 10px;
+}
+
+.btn-search-main:hover {
+    transform: none; /* Remove scaling */
+    background: #e5e7eb; /* Soft Grey Hover */
+}
+
+/* Custom Glassmorphic Dropdown System */
+.custom-select-wrapper {
+    position: relative;
+    user-select: none;
+    width: 100%;
+}
+
+.custom-select {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.custom-select-trigger {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Center the content */
+    align-items: center;
+    padding: 0 1.5rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #fff;
+    height: 60px; /* Match height of search input/button */
+    line-height: 60px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s;
+    gap: 15px; /* Separate Text from Icon */
+}
+
+body.light-mode .custom-select-trigger {
+    color: #1f2937;
+}
+
+.custom-select-trigger span {
+    z-index: 2; /* Ensure text is above */
+}
+
+.custom-select-trigger i {
+    font-size: 0.8rem;
+    color: #9ca3af;
+    transition: transform 0.3s;
+    z-index: 2;
+}
+
+body.light-mode .custom-select-trigger i {
+    color: #6b7280;
+}
+
+/* Open State for Trigger */
+.custom-select.open .custom-select-trigger i {
+    transform: rotate(180deg);
+}
+
+.custom-options {
+    position: absolute;
+    display: block;
+    top: 100%;
+    left: 50%; /* Center relative to parent */
+    transform: translateX(-50%) translateY(-10px); /* Initial state for animation */
+    /* right: 0; REMOVED to allow expansion */
+    width: max-content; /* Expand to fit widest text */
+    min-width: 200px; /* Safety width */
+    white-space: nowrap; /* Prevent wrapping */
+    
+    border: 1px solid rgba(255, 255, 255, 0.15); 
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.6);
+    background: #0a0a0a; 
+    backdrop-filter: blur(10px); 
+    margin-top: 10px;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.25s cubic-bezier(0.5, 0, 0, 1.25);
+    z-index: 100;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+.custom-select.open .custom-options {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+    transform: translateX(-50%) translateY(0); /* Keep centered */
+}
+
+.custom-option {
+    position: relative;
+    display: block;
+    padding: 1rem 1.5rem; /* More padding */
+    font-size: 0.95rem;
+    font-weight: 500;
+    color: #9ca3af;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-bottom: 1px solid rgba(255,255,255,0.05);
+}
+
+.custom-option:last-of-type {
+    border-bottom: none;
+}
+
+.custom-option:hover,
+.custom-option.selected {
+    background: #1f2937; /* Dark Grey Highlight */
+    color: #fff;
+    padding-left: 1.8rem;
+}
+
+.custom-option.selected::after {
+    content: '✓';
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #3b82f6; /* Bright Blue */
+    font-weight: bold;
+}
+
+/* Custom Scrollbar for Dropdown */
+.custom-options::-webkit-scrollbox {
+    width: 6px;
+}
+.custom-options::-webkit-scrollbar {
+    width: 6px;
+}
+.custom-options::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2); 
+    border-radius: 3px;
+}
+.custom-options::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); 
+}
+
+/* Hide Original Selects */
+.modern-search-bar select {
+    display: none; /* Hide native */
+}
+
+/* Car Specs Styles */
+.spec-item {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: flex-start;
+    gap: 0.75rem;
+    color: #9ca3af;
+    width: 100%;
+}
+
+.spec-icon {
+    color: #ffffff;
+    width: 22px;
+}
+
+.spec-label {
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #9ca3af;
+    text-transform: uppercase;
+}
+
+.spec-value {
+    color: #d1d5db;
+    font-weight: 500;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    margin-left: 0.25rem;
+}
+
+/* Light Mode Overrides for Specs */
+body.light-mode .spec-item {
+    color: #4b5563;
+}
+body.light-mode .spec-icon {
+    color: #1f2937; /* Dark icon */
+}
+body.light-mode .spec-label {
+    color: #4b5563;
+}
+body.light-mode .spec-value {
+    color: #111827; /* Near black value */
+}
+body.light-mode .specs-divider-line {
+    background-color: #e5e7eb !important;
+}
+body.light-mode .specs-divider-text {
+    background-color: #ffffff;
+    color: #111827;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    border: 1px solid #e5e7eb;
+}
+
+body.light-mode .description-text {
+    color: #4b5563 !important;
+}
+
+body.light-mode .section-title-related {
+    color: #1f2937 !important;
+}
+
+/* Responsive Navbar Styles */
+.mobile-menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+@media (max-width: 992px) {
+    .navbar {
+        min-width: 90%;
+        padding: 0.75rem 1.5rem;
+        display: block; /* Ensure container behavior */
+        border-radius: 1rem; /* Reset pill shape to normal rounded */
+    }
+    
+    .nav-content {
+       /* Keep flex but wrap if needed */
+       flex-wrap: wrap;
+    }
+
+    .mobile-menu-toggle {
+        display: block;
+        margin-left: auto; /* Push to right */
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.95);
+        backdrop-filter: blur(20px);
+        padding: 1rem 0;
+        border-radius: 1rem;
+        margin-top: 1rem;
+        border: 1px solid rgba(255,255,255,0.1);
+        text-align: center;
+        gap: 0;
+    }
+    
+    /* Light Mode Mobile Menu */
+    body.light-mode .nav-links {
+        background: rgba(255, 255, 255, 0.98);
+        border: 1px solid rgba(0,0,0,0.1);
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
+    
+    body.light-mode .nav-links a, 
+    body.light-mode .dropdown-toggle {
+        color: #1f2937;
+        border-bottom: 1px solid #f3f4f6;
+    }
+
+    body.light-mode .mobile-menu-toggle {
+        color: #1f2937;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links a, .dropdown-toggle {
+        display: block;
+        padding: 1rem;
+        width: 100%;
+        border-radius: 0;
+        margin: 0;
+        font-size: 1.1rem;
+    }
+
+    .dropdown {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    /* Override any transform/absolute positioning */
+    .dropdown-content {
+        position: static !important;
+        transform: none !important;
+        background: rgba(255,255,255,0.05);
+        box-shadow: none;
+        padding: 0;
+        display: none; 
+        border: none;
+        text-align: center;
+        width: 100%;
+        min-width: auto;
+        margin-top: 0.5rem;
+        border-radius: 0.5rem;
+    }
+    
+    .dropdown-content a {
+        padding: 1rem;
+        font-size: 1rem;
+        color: #ddd;
+        border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    /* Show on active only */
+    .dropdown.active .dropdown-content {
+       display: block;
+       animation: fadeIn 0.3s ease;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-10px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+
+    .nav-links a:hover, .dropdown-toggle:hover {
+        background: rgba(255,255,255,0.1);
+        transform: none;
+    }
+}
+
+/* Responsive Index Page Styles */
+@media (max-width: 768px) {
+    /* Hero Adjustments */
+    .hero-slider {
+        height: 250px; /* Smaller height for mobile */
+    }
+    .slide-title {
+        font-size: 1.5rem; /* Smaller title */
+    }
+    .slide-subtitle {
+        font-size: 0.9rem;
+    }
+    .slide-content {
+        left: 1rem;
+        bottom: 10%;
+        max-width: 90%;
+    }
+    .prev, .next {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Banners */
+    .ads-banner-container img, 
+    .ads-banner-container video, 
+    .ads-banner-container div { 
+        height: 150px !important; 
+    }
+
+    /* Modern Search Bar Mobile - Side by Side Filters */
+    .modern-search-bar {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr; /* Two columns */
+        gap: 0.5rem;
+        border-radius: 1rem; /* Less rounded on mobile */
+        padding: 1rem;
+        width: 95%;
+        max-width: 100%;
+    }
+
+    /* Search Input: Full Width (Span 2 cols) */
+    .search-input-group {
+        grid-column: 1 / -1; /* Span full width */
+        width: 100%;
+        margin-bottom: 0.5rem;
+        padding: 0;
+    }
+
+    .search-input-group input {
+        width: 100%; /* Fill space */
+    }
+
+    /* Dropdowns: Side by Side (Already 1fr 1fr from grid) */
+    .search-dropdown-group {
+        width: 100%;
+        margin: 0;
+    }
+
+    /* Search Button: Full Width (Span 2 cols) */
+    .btn-search-main {
+        grid-column: 1 / -1;
+        width: 100%;
+        border-radius: 0.5rem;
+        margin: 0;
+        height: 40px;
+    }
+    
+    /* Adjust Dropdown Trigger for Grid */
+    .custom-select-trigger {
+        justify-content: center; /* Center text */
+        height: 40px; /* Smaller height */
+        line-height: normal; /* Reset */
+    }
+
+    /* Section Headers */
+    .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+    .header-text-group p {
+        width: 100% !important; /* Allow full width on mobile for subtitles */
+    }
+    .btn-view-all {
+        align-self: flex-start;
+        margin-top: 0.5rem;
+        font-size: 0.7rem !important;
+    }
+
+    /* Contact Page Responsiveness */
+    /* Contact Page Responsiveness */
+    .contact-title {
+        font-size: 1.5rem !important; /* Significantly smaller */
+        text-align: center !important;
+        width: 100% !important;
+        word-break: break-word !important; /* Force break if needed */
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding: 0 1rem;
+        display: block;
+    }
+}
