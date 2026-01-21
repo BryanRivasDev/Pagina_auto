@@ -1,9 +1,18 @@
 <?php
 // Database Configuration
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'pagina_autos_db');
+if ($_SERVER['HTTP_HOST'] == 'localhost' || $_SERVER['HTTP_HOST'] == '127.0.0.1') {
+    // Local XAMPP Credentials
+    define('DB_SERVER', 'localhost');
+    define('DB_USERNAME', 'root');
+    define('DB_PASSWORD', '');
+    define('DB_NAME', 'pagina_autos_db');
+} else {
+    // InfinityFree Production Credentials
+    define('DB_SERVER', 'sql208.infinityfree.com');
+    define('DB_USERNAME', 'if0_40835271');
+    define('DB_PASSWORD', 'VB6nmtMnSxbxGn8');
+    define('DB_NAME', 'if0_40835271_pagina_autos_db');
+}
 
 // Attempt to connect to MySQL database
 try {
