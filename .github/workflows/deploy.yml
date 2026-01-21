@@ -27,3 +27,8 @@ jobs:
           local-dir: ./
           # La carpeta raíz de tu sitio en InfinityFree (normalmente es htdocs/)
           server-dir: htdocs/
+
+      - name: 🚀 Run Database Migrations
+        run: |
+          echo "Triggering database migration..."
+          curl -L --fail "http://autolote.fwh.is/deploy_db.php?token=${{ secrets.DEPLOY_TOKEN }}"
