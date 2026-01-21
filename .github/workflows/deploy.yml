@@ -18,7 +18,7 @@ jobs:
         uses: SamKirkland/FTP-Deploy-Action@v4.3.6
         with:
           # Reemplaza 'ftpupload.net' con el host FTP de tu panel de InfinityFree
-          server: autolote.fwh.is
+          server: ftpupload.net
           # Reemplaza 'epiz_...' con tu usuario FTP real
           username: ${{ secrets.FTP_USERNAME }}
           # Usa el secreto que creaste anteriormente para la contraseña
